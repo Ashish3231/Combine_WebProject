@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!---------------------------           Header         ------------------------------------->
+
+    <section id="header">
+
+        <div class="header">
+            
+            <div class="dark-mode">
+                <input class="input" type="checkbox" id="dark-mode" >
+                <label for="dark-mode" class="dark-mode-icon">
+                    <div class="circle">
+                        
+                    </div>
+                    
+                </label>
+            </div>
+
+            <div>
+
+              
+
+            <div class="menu">
+
+               
+
+                <ul class="menu-list ">
+                 
+                    <li class="menu-item"><a href="">Color enerator</a></li>
+                    <li class="menu-item" ><a href="">Home</a></li>
+                    <li class="menu-item"><a href="">Drum Kits</a></li>
+                    <li class="menu-item"><a href="">Multiplication App</a></li>
+                    <li class="menu-item"><a href="">Photos</a></li>
+                    <li class="menu-item"><a href="">Tabs</a></li>
+                    <li class="menu-item"><a href="">Character Counter</a></li>
+                </ul>
+               
+            </div>
+          </div>
+
+        </div>
+        <div class="menu-icon">
+            <i class="fa fa-bars fa-3x"></i>
+         </div>
+    </section>
+
+    <!----------------      main-section    ------------------>
+    <section id="main-section">
+
+        
+
+        <div class="image-container">
+            <div class="img-slider">
+                <img src="img/bg1.jpg" alt="">
+                <img src="img/bg2.jpg" alt="">
+                <img src="img/bg3.jpg" alt="">
+            </div>
+            <div class="slider-icon">
+                 <i class="fas fa-angle-double-left slider-btn perv"></i>
+                <i class="fas fa-angle-double-right slider-btn next"></i>
+            </div>
+            <!----------    clock   ---------------------->
+            <div class="clock">
+                <div>
+                    <span id="hour"></span>
+                    <span class="text-clock">Hours</span>
+                </div>
+                <div>
+                    <span id="minute"></span>
+                    <span class="text-clock">Minutes</span>
+                </div>
+                <div>
+                    <span id="second"></span>
+                    <span class="text-clock">Seconds</span>
+                </div>
+                <div class="ampm">
+                    
+                    <h4 id = "ampm">Am</h4>
+                </div>
+            </div>
+
+            <!-------xx------ clock end --------------xx-------->
+
+            <!----------    Text effect -   ------------->
+            <div class="text-effect">
+               
+            </div>
+            <!-----------   end text effect     --------->
+        </div>
+
+        <!------------- button -------------------------->
+
+        <div class="start-main-btn">
+            <a class="main-btn"><span >Login Here</span> </a>
+        </div>
+        <!-----------------------Modal------------------->
+        <div class="modal">
+
+            <div class="email">
+                <label for="email" >Email: </label>
+                <input type="text" placeholder="Email">
+            </div>
+            <br>
+            <div class="password">
+                <i class="fa fa-circle-xmark fa-2x close-icon"></i>
+                <label for="password">password: </label>
+            <input type="text" placeholder="Password">
+            </div>
+            <br>
+            <button>submit</button>
+
+        </div>
+        
+    </section>
+
+    <!--------------------      color Generator ----------------------->
+
+
+    <section id="color-generator">
+        <div class="">
+           
+            <div class="">
+                <h1>Color Generator</h1>
+            </div>
+            <div class="color-container">
+                
+                
+            </div>
+            <div class="random-color-btn normal-btn">
+                <button class="color-btn">color generator</button>
+            </div>
+        </div>
+       
+    </section>
+
+    <!---------------   multiplication App  ------------------->
+
+    <section id="multiplication-app">
+        <form class="form">
+            <h1>Multiplication App</h1>
+            <div class="box">
+                <div >
+                    <h3 class="score">Score: 1</h3>
+                </div>
+                <p class="mutiply-qus">What is 3 multiply by 2 is ?</p>
+                <input class ="input-multiply" type="text" placeholder="Enter your Answer" autofocus autocomplete="off">
+                <div class="mutiply-btn normal-btn">
+                    <button class="color-btn">Submit</button>
+                </div>
+            </div>
+        </form>
+    </section>
+
+    
+
+
+    <script src="js/index.js"></script>
+</body>
+</html>

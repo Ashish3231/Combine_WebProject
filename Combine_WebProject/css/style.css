@@ -1,0 +1,425 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Permanent+Marker&display=swap');
+
+*{
+    margin:0;
+    
+}
+body{
+    margin: 0;
+}
+
+.container{
+    height: 100vh;
+    width: 100%;
+    
+    
+}
+
+h1{
+    margin-top: 100px;
+    text-align: center;
+    font-family: "permanent marker", cursive;
+    font-size: xx-large;
+    color: white;
+}
+
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+img{
+    height: 100vh;
+    min-width: 100vw;
+    object-fit: cover;
+}
+.dark-active{
+    background: black;
+    color: white;
+    
+}
+p{
+    color: gray;
+}
+
+/*  -------------   header -----------------*/
+
+    /* -----------  dark mode ------------*/
+    
+    .input{
+        visibility: hidden;
+    }
+
+    .dark-mode-icon{
+        position: absolute;
+        width: 80px;
+        height: 40px;
+        background: darkgray;
+        top: .8vh;
+        left: .7vh;
+        border-radius: 20px;
+    }
+    .circle{
+        position: absolute;
+        width: 34px;
+        height: 34px;
+        background: white;
+        top: .4vh;
+        left: .4vh;
+        border-radius: 20px;
+        animation: toggleOff .3s linear forwards;
+    }
+
+    
+    .input:checked + .dark-mode-icon .circle{
+        animation: toggleOn .3s linear forwards;
+        background: black;
+    }
+
+    @keyframes toggleOn {
+        0%{
+            transform: translateX(0);
+        }
+       100%{
+            transform: translateX(40px);
+        }
+    }
+    @keyframes toggleOff {
+        0%{
+            transform: translateX(40px);
+        }
+       100%{
+            transform: translateX(0);
+        }
+        
+    }
+.header{
+
+    position: fixed;
+    background: #ffff;
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: ease .3s ;
+    z-index: 1;
+}
+.header.active{
+    height: 70vh;
+    justify-content: center;
+    
+}
+
+.menu-list{
+    display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.menu-list.active{
+    display: inline;
+    
+}
+
+.menu-item a{
+    margin-right: 1.1rem;
+    color: grey;
+    font-family: cursive;
+    
+}
+.menu-item a:hover{
+    color: limegreen;
+}
+
+.menu-icon{
+
+    color: darkgray;
+    display: none;
+    position: fixed;
+    right: 10px;
+    z-index: 2;
+}
+.menu{
+    display: flex;
+    align-items: center;
+
+}
+
+/*----------------------    main section    ----------------*/
+.image-container{
+    overflow: hidden;
+    opacity: 1;
+    width: 100%;
+}
+.img-slider{
+    z-index: 0;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+   /* transform: translateX(-100%); */
+   transition: transform .7s ease-in-out;
+    
+}
+.slider-btn{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ffff;
+    opacity: .7;
+    font-size: 30px;
+    cursor: pointer;
+}
+.slider-btn:hover{
+    opacity: 1;
+}
+.perv{
+    left: 10px;
+}
+.next{
+    right: 10px;
+}
+
+    /*------------  text effect animation------------*/
+
+    .text-effect{
+        white-space: nowrap;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 0;
+        color:white;
+        font-size: 20px;
+        font-family: 'Permanent marker' ,cursive;
+        cursor: default;
+    }
+
+    /*------------- clock   ----------------------*/
+
+    .clock{
+        display: flex;
+        position: absolute;
+        z-index: 0;
+        color: white;
+         top: 25%;
+         left: 50%;
+         transform: translateX(-50%);
+    }
+
+    .clock div{
+        margin: 5px;
+    }
+   
+    .clock span{
+        width: 100px;
+        height: 80px;
+        background: rgb(96, 92, 92);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: .8;
+        font-size: 50px;
+        font-family:sans-serif;
+    }
+    .clock .text-clock{
+       
+        
+        height: 30px;
+        opacity: .7;
+        font-size: 15px;
+        background: rgb(44, 39, 39);
+        
+        
+    }
+    .clock .ampm{
+        position: relative;
+        top: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+    height: 28px;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: yellowgreen;
+    opacity: .8;
+    }
+    
+    /* ----------- main Button -------------*/
+    
+    .main-btn{
+        
+        position: absolute;
+     
+        top: 65%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        
+        padding: 20px 35px;
+        border-radius: 30px;
+        background: #ffff;
+        color: balck;
+        border: none;
+        font-size: 15px;
+        overflow: hidden;
+        
+    }.main-btn span{
+        position: relative;
+        z-index: 0;
+    }
+    .main-btn::before{
+        content: "";
+        position: absolute;
+        width: 0px;
+        height: 0px;
+        left: var(posX);
+        top: var(posY);
+        transform: translate(-50%, -50%);
+        background: yellowgreen;
+        border-radius: 100px;
+    }
+    .main-btn:hover{
+        color:#ffff;
+    }
+    .main-btn:hover::before{
+        width: 300px;
+        height: 300px;
+        overflow: hidden;
+        transition: ease .7s;
+        
+    }
+    /* -----------------    modal   --------------  */
+
+    .modal{
+        
+        background: white;
+        position: fixed;
+        width: 300px;
+        height: 300px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -400%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: linear .5s;
+        border-radius: 20px;
+    }
+    .close-icon{
+        position: absolute;
+        top: 0%;
+        right: 0%;
+    }
+
+/*---------------   random color generator  -------------*/
+    
+    .color{
+        width: 200px;
+        height: 200px;
+        background: black;
+        margin: 2px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .color-container{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px;
+    }
+   
+    .color p{
+        font-size:larger;
+        font-family: sans-serif;
+        color: white;
+    }
+    .random-color-generator{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .normal-btn{
+       display: flex; 
+       justify-content: center;
+       align-items: center; 
+       margin-top: 20px;
+       
+    }
+    .color-btn{
+        border-radius: 30px;
+        padding: 15px;
+        border: none;
+    }
+    .color-btn:hover{
+        background: limegreen;
+        color: white;
+    }
+
+    /*------------  multiplication App  ---------------*/
+
+    .box{
+        display: flex;
+        flex-direction: column;
+        
+        
+        background: yellow;
+       border-radius: 20px;
+       padding: 30px;
+        margin: 50px;
+        min-height: 50vh;
+    }
+    .box p{
+        margin-top: 100px;
+        font-size: 2.4rem;
+        color: black;
+        text-align: center;
+    }
+    .box input{
+        
+        width: 100%;
+        border-radius: 7px;
+        border: none;
+        
+        padding: 5px;
+        margin-top: 10px;
+        height: 2rem;
+    }
+    .box input::placeholder
+    {
+        color: gray;
+        text-align: center;
+        font-size: 1.5rem;
+    }
+    .score{
+        color: limegreen;
+        text-align: right;
+        
+    }
+
+
+
+
+
+/*----------------------------------------------------------*/
+
+@media (max-width: 900px) {
+
+    .menu-list{
+        display: none;
+    }
+    .menu-icon{
+        display: block ;
+    }
+    .menu-item{
+        padding: 10px;
+        font-size: large;     
+    }
+   
+
+}
