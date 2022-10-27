@@ -70,14 +70,14 @@ inputE1.addEventListener("input", ()=>{
 
  nextE1.addEventListener("click", ()=>{
 
-    clearInterval(timeout);
+    clearTimeout(timeout);
     slideCount++;
     updateSlider();
     
  })
  pervE1.addEventListener("click", ()=>{
 
-    clearInterval(timeout);
+    clearTimeout(timeout);
     slideCount--;
     updateSlider();
     
@@ -97,7 +97,7 @@ inputE1.addEventListener("input", ()=>{
     }
  
 
-    imageSliderE1.style.transform = 'translateX(-'+ slideCount * 104  +'%)';
+    imageSliderE1.style.transform = 'translateX(-'+ (slideCount) * 100  +'%)';
 
     timeout = setTimeout(()=>{
         slideCount++;
@@ -283,7 +283,7 @@ function randomColor()
     return colorCode;
 }
 
-// Multiplication App
+//-------------  Multiplication App     ---------------------
 
 const multiplyBtnE1 = document.querySelector(".mutiply-btn");
 const inputMultiplyE1 =  document.querySelector(".input-multiply");
@@ -327,3 +327,25 @@ function updateScoreLocalStorage()
 {
     localStorage.setItem("mutiplyScore", JSON.stringify(score));
 }
+
+
+
+// -------------    Cursor Animation    -------------
+
+bodyE1.addEventListener("mouseover", ()=>{
+   
+    const cPosX = Event.offsetX;
+    const cPosY = Event.offsetY;
+    const strongE1 =  document.createElement("strong");
+    strongE1.style.left = cPosX;
+    strongE1.style.rigth = cPosY;
+
+    const size = Math.random() * 50;
+    strongE1.style.width = size + "px";
+    strongE1.style.heigth = size + "px";
+
+    setTimeout(()=>{
+        strongE1.remove();
+    }, 5000);
+
+})
