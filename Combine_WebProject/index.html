@@ -151,14 +151,14 @@
     <!---------------   multiplication App  ------------------->
 
     <section id="multiplication-app">
-        <form class="form">
+        <form class="form container">
             <h1>Multiplication App</h1>
             <div class="box">
-                <div >
-                    <h3 class="score">Score: 1</h3>
-                </div>
+                
+                    <h3  class="score">Score: 1</h3>
+                
                 <p class="mutiply-qus">What is 3 multiply by 2 is ?</p>
-                <input class ="input-multiply" type="text" placeholder="Enter your Answer" autofocus autocomplete="off">
+                <input class ="input-multiply" type="text" placeholder="Enter your Answer"  autocomplete="off">
                 <div class="mutiply-btn normal-btn">
                     <button class="color-btn">Submit</button>
                 </div>
@@ -166,7 +166,31 @@
         </form>
     </section>
 
-    <span></span>
+    <section id = "character-counter">
+        <div class="container">
+            <h1>Character Counter</h1>
+            <div class="box">
+                <h2 class="box-header">Real-Time Character Counter</h2>
+                <textarea class="character-counter-textarea" id="" cols="30" rows="10" maxlength="50" placeholder="Please enter text here "></textarea>
+
+                <div class="characters-count">
+
+                         <g>
+                            Total Characters:
+                            <span class="total-character">0</span>
+                         </g>
+
+                       <g>
+                            Remaining Characters:
+                            <span class="remaining-character">50</span>
+                       </g>
+                    
+                </div>
+
+
+            </div>
+        </div>
+    </section>
 
 
     <script src="js/index.js"></script>

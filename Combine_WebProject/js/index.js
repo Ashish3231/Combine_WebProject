@@ -328,7 +328,29 @@ function updateScoreLocalStorage()
     localStorage.setItem("mutiplyScore", JSON.stringify(score));
 }
 
+//--------------    Character Counter   -------------
 
+const characterCounterTextareaE1 = document.querySelector(".character-counter-textarea");
+const totalCharaterE1 = document.querySelector(".total-character");
+const remainingCharaterE1 = document.querySelector(".remaining-character");
+
+
+characterCounterTextareaE1.addEventListener("keyup", ()=>{
+    
+    updateCharaterCounter();
+})
+
+function updateCharaterCounter()
+{
+    totalCharaterE1.innerText = characterCounterTextareaE1.value.length;
+   
+    remainingCharaterE1.innerText = characterCounterTextareaE1.getAttribute("maxlength") - characterCounterTextareaE1.value.length;
+   
+
+  
+
+
+}
 
 // -------------    Cursor Animation    -------------
 

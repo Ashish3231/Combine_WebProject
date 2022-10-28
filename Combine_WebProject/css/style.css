@@ -9,24 +9,29 @@ html{
 }
 body{
     margin: 0;
-    
+    font-family: sans-serif;
 }
 
 .container{
-    height: 100vh;
-    width: 100%;
-    
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    height: 80vh;
 }
 
 h1{
     margin-top: 100px;
+    margin-bottom: 50px;
     text-align: center;
     font-family: "permanent marker", cursive;
     font-size: xx-large;
     color: white;
 }
-
+h2{
+    font-family: cursive;
+   
+}
 a{
     text-decoration: none;
 }
@@ -109,6 +114,7 @@ p{
     justify-content: space-between;
     transition: ease .3s ;
     z-index: 1;
+    box-sizing: border-box;
 }
 .header.active{
     height: 70vh;
@@ -137,7 +143,7 @@ p{
 }
 
 .menu-icon{
-
+    margin-right: 20px;
     color: darkgray;
     display: none;
     position: fixed;
@@ -153,6 +159,7 @@ p{
 /*----------------------    main section    ----------------*/
 .image-container{
     overflow: hidden;
+    box-sizing: border-box;
 }
 .img-slider{
     z-index: 0;
@@ -161,6 +168,7 @@ p{
     flex-direction: row;
    /* transform: translateX(-100%); */
    transition: transform .7s ease-in-out;
+   box-sizing: border-box;
     
 }
 .slider-btn{
@@ -215,14 +223,14 @@ p{
     }
    
     .clock span{
-        width: 100px;
-        height: 80px;
+        width: 100px;    /*100 */
+        height: 80px;   /* 80*/
         background: rgb(96, 92, 92);
         display: flex;
         align-items: center;
         justify-content: center;
         opacity: .8;
-        font-size: 50px;
+        font-size: 50px; /* 50 */
         font-family:sans-serif;
     }
     .clock .text-clock{
@@ -230,14 +238,14 @@ p{
         
         height: 30px;
         opacity: .7;
-        font-size: 15px;
+        font-size: 15px; /* 15*/
         background: rgb(44, 39, 39);
         
         
     }
     .clock .ampm{
         position: relative;
-        top: 80px;
+        top: 80px;  /* 80 */
         display: flex;
         align-items: center;
         justify-content: center;
@@ -320,10 +328,10 @@ p{
 /*---------------   random color generator  -------------*/
     
     .color{
-        width: 200px;
-        height: 200px;
+        width: 100px;
+        height: 100px;
         background: black;
-        margin: 2px;
+        margin: 3px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -365,22 +373,16 @@ p{
     }
 
     /*------------  multiplication App  ---------------*/
-    form{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
+    
     .box{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 60vw;
-        background: yellow;
+       
+        margin-top: 0px;
+        width: 75vw;
+        background: pink;
        border-radius: 20px;
-       padding: 30px;
-        margin: 50px;
-        min-height: 50vh;
+       padding: 20px;
+        margin: 0px;
+        
     }
     .box p{
         margin-top: 100px;
@@ -390,27 +392,58 @@ p{
     }
     .box input{
         
-        width: 80%;
+        width: 100%;
         border-radius: 7px;
         border: none;
-        
-        padding: 5px;
+        padding: 10px;
         margin-top: 10px;
         height: 2rem;
         margin:  20px 0px;
+        outline: none;
+        box-sizing: border-box;
     }
     .box input::placeholder
     {
         color: gray;
         text-align: center;
         font-size: 1.5rem;
+        
     }
-    .score{
+    
+    .score
+    {
         color: limegreen;
-        text-align: right;
-        
-        
+        float: right;
     }
+
+/*  ------------    Real time character  counter    -------*/
+
+.character-counter-textarea{
+    border: solid 5px darkgray;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 20px;
+    font-family: sans-serif;
+    height: 150px;
+    outline: none;
+    padding: 10px;
+    margin: 40px 0;
+}
+.characters-count{
+    display: flex;
+    justify-content: space-between;
+}
+.total-character{
+    font-size: 17px;
+    color: green;
+}
+.remaining-character{
+    font-size: 17px;
+    color: red;
+}
+
+
+
 /*--------------- cursor Animation -----------------------*/
 
 strong
@@ -459,6 +492,21 @@ strong
     .menu-item{
        
         font-size: large;     
+    }
+    .clock span{
+        width: 65px;    /*100 */
+        height: 55px;   /* 80*/
+        font-size: 35px; /* 50 */
+    }
+    .clock .text-clock{
+     
+        font-size: 10px; /* 15*/
+
+    }
+    .clock .ampm{
+        top: 60px;  /* 80 */
+        width: 35px;
+        font-size: 10px;
     }
  
 }
