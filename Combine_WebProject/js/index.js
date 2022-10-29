@@ -1,7 +1,36 @@
+
+
+// -------------    Cursor Animation    -------------
+const bodyE1 = document.querySelector("body");
+/*
+
+
+bodyE1.addEventListener("mousemove", (event)=>{
+   
+    const cPosX = event.offsetX;
+    const cPosY = event.offsetY;
+    const strongE1 =  document.createElement("strong");
+    strongE1.style.left = cPosX  + "px";
+    strongE1.style.right = cPosY + "px";
+
+    const size = Math.random() * 50;
+    strongE1.style.width = size + "px";
+    strongE1.style.height = size + "px";
+
+    bodyE1.appendChild(strongE1);
+
+    setTimeout(()=>{
+        strongE1.remove();
+    }, 5000);
+
+})
+
+*/
+
 // --------------  dark-mode  -------
 
 const inputE1  = document.querySelector(".input");
-const bodyE1 = document.querySelector("body");
+
 const headerE1 = document.querySelector(".header");
 const h1E1 = document.querySelectorAll("h1");
 
@@ -300,6 +329,11 @@ console.log(num2)
 
 multiplyQusE1.innerText = 'What is '+ num1 + ' multiply by '+ num2+ ' ?';
 
+if(!score)
+{
+    score = 0;
+}
+
 scoreE1.innerText = "Score: "+score;
  
 formE1.addEventListener("submit", ()=>
@@ -346,28 +380,52 @@ function updateCharaterCounter()
    
     remainingCharaterE1.innerText = characterCounterTextareaE1.getAttribute("maxlength") - characterCounterTextareaE1.value.length;
    
-
-  
-
-
 }
 
-// -------------    Cursor Animation    -------------
+//----------------  Movie triler    ----------------
 
-bodyE1.addEventListener("mouseover", ()=>{
+const movieBtnE1 = document.querySelector(".movie-btn");
+const movieVideoE1 = document.querySelector(".movie-video");
+const closeIconE1 = document.querySelector("#close-icon");
+const videoE1 = document.querySelector("video");
+
+movieBtnE1.addEventListener("click", ()=>{
+
+    movieVideoE1.classList.remove("active");
+    videoE1.play();
+
+})
+
+closeIconE1.addEventListener("click", ()=>{
+
+    movieVideoE1.classList.add("active");
+    videoE1.pause();
+    videoE1.currentTime = 0;
+
+})
+
+//------------------- music instruments ----------------
+
+const instrumentsE1 = document.querySelector(".instruments");
+
+
+const instruments = ["guitar", "flute", "piano", "drum"];
+
+instruments.forEach((instrument)=>{
+
+    const buttonE1 = document.createElement("button");
+    const audioE1 = document.createElement("audio");
+    buttonE1.classList.add("instrument-btn");
+
+    instrumentsE1.appendChild(buttonE1);
+    instrumentsE1.appendChild(audioE1);
+
+    buttonE1.innerText = instrument;
+    buttonE1.style.backgroundImage = "url(./instruments-img/"+instrument+".jpg)";
+    audioE1.src =  "./audio/"+ instrument + ".wav";
+
+    buttonE1.addEventListener("click", ()=>{
+        audioE1.play();
+    })
    
-    const cPosX = Event.offsetX;
-    const cPosY = Event.offsetY;
-    const strongE1 =  document.createElement("strong");
-    strongE1.style.left = cPosX;
-    strongE1.style.rigth = cPosY;
-
-    const size = Math.random() * 50;
-    strongE1.style.width = size + "px";
-    strongE1.style.heigth = size + "px";
-
-    setTimeout(()=>{
-        strongE1.remove();
-    }, 5000);
-
 })
