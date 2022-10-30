@@ -36,6 +36,7 @@ h2{
     margin: 10px 0;
     font-size: xx-large;
     color: white;
+    text-transform: capitalize;
 }
 a{
     text-decoration: none;
@@ -452,6 +453,8 @@ p{
 
 .card-container{
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .movie-btn{
@@ -466,13 +469,16 @@ p{
     height: 250px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    
+   /* background-image: url(../img/bg2.jpg); */
+    background-position: center;
+    background-size: cover;
 }
 
 .card{  
     margin: 20px 10px;
     width: 320px;
     height: 500px; 
+    
 }
 .card p{
     margin-bottom: 10px;

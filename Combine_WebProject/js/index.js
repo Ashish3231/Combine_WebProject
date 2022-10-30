@@ -382,9 +382,69 @@ function updateCharaterCounter()
    
 }
 
-//----------------  Movie triler    ----------------
+//----------------  Movie trailer    ----------------
 
-const movieBtnE1 = document.querySelector(".movie-btn");
+const lifes = ["wildlife", "animallife", "birdlife"];
+const cardContainerE1 = document.querySelector(".card-container");
+const videoE1 = document.querySelector("video");
+const movieVideoE1 = document.querySelector(".movie-video");
+const closeIconE1 = document.querySelector("#close-icon");
+
+lifes.forEach((life)=>{
+
+    //create card
+    const cardE1 = document.createElement("div");
+    cardE1.classList.add("card");
+    cardContainerE1.appendChild(cardE1);
+
+    //add img in card
+    const cardImgE1 = document.createElement("div");
+    cardImgE1.classList.add("card-img");
+    cardImgE1.style.backgroundImage = "url(./img/"+life+".jpg)";
+    cardE1.appendChild(cardImgE1);
+    
+
+    //add header in card
+    const h2E1 = document.createElement("h2");
+    cardE1.appendChild(h2E1);
+    h2E1.innerText = life;
+
+    //add paragraph in card
+    const pE1 = document.createElement("p");
+    cardE1.appendChild(pE1);
+    pE1.innerText = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio illo alias cumque, maxime explicabo dolores ad in similique quis magni";
+
+    //add button in card
+    const cardBtnE1 = document.createElement("button");
+    cardBtnE1.classList.add("color-btn");
+    cardBtnE1.classList.add("movie-btn");
+    cardBtnE1.innerText = life;
+    cardE1.appendChild(cardBtnE1);
+
+    //---------------add video for each card---------------
+
+    
+    
+   // movieVideoE1.appendChild(videoE1);
+
+
+    cardBtnE1.addEventListener("click", ()=>{
+        movieVideoE1.classList.remove("active");
+        videoE1.src = "./video/"+life+".mp4";
+        videoE1.play();
+    })
+
+    closeIconE1.addEventListener("click", ()=>{
+        movieVideoE1.classList.add("active");
+        videoE1.pause();
+        videoE1.currentTime = 0;
+    })
+
+
+
+
+})
+/* const movieBtnE1 = document.querySelector(".movie-btn");
 const movieVideoE1 = document.querySelector(".movie-video");
 const closeIconE1 = document.querySelector("#close-icon");
 const videoE1 = document.querySelector("video");
@@ -403,6 +463,8 @@ closeIconE1.addEventListener("click", ()=>{
     videoE1.currentTime = 0;
 
 })
+
+*/
 
 //------------------- music instruments ----------------
 
