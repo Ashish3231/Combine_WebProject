@@ -34,8 +34,8 @@ h1{
 h2{
     font-family: cursive;
     margin: 10px 0;
-    font-size: xx-large;
-    color: white;
+    font-size: xl-large;
+    color: black;
     text-transform: capitalize;
 }
 a{
@@ -45,7 +45,7 @@ ul{
     list-style: none;
 }
 .image-container img{
-    height: 100vh;
+    height: 80vh;
     min-width: 100%;
     object-fit: cover;
 }
@@ -57,6 +57,7 @@ ul{
 p{
     color: gray;
 }
+
 
 /*  -------------   header -----------------*/
 
@@ -373,6 +374,7 @@ p{
         border: none;
         background: darkgray;
         color: white;
+        text-transform: capitalize;
     }
     .color-btn:hover{
         background: limegreen;
@@ -462,6 +464,7 @@ p{
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 20px;
+
 }
 
 .card-img{
@@ -543,6 +546,60 @@ p{
     box-shadow: none;
 }
     
+
+/*------------- tabs    ----------------==*/
+.tab-section-center{
+    padding: 20px;
+}
+.tab-img img{
+    width: 100%;
+    object-fit: cover;
+    height: 30rem;
+    border-radius: 20px;
+}
+
+.tab-btn-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.tab-btn{
+    color: gray;
+    padding: 1rem 0;
+    letter-spacing: 0.25rem;
+    font-size: 1rem;
+    border: none;
+    background: pink;
+    cursor: pointer;
+    transition: all 0.3s linear;
+    
+}
+.tab-btn:nth-child(1){
+    border-top-left-radius: 20px;
+}
+.tab-btn:nth-child(3){
+    border-top-right-radius: 20px;
+}
+
+.tab-container{
+    margin-top: 20px;
+}
+.content h3{
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.tab-btn:hover{
+    background: limegreen;
+}
+.content{
+    display: none;
+}
+.content-live{
+    display: block;
+}
+.tab-btn-live{
+    background: limegreen;
+}
        
 
 /*--------------- cursor Animation -----------------------*/
@@ -575,6 +632,8 @@ strong
     }
     
 }
+
+
 
 
 
@@ -618,5 +677,16 @@ strong
 @media (max-width: 600px) {
     .movie-video video{
         max-width: 100%;
+    }
+}
+
+@media (min-width: 992px){
+    .tab-section-center{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 2rem;
+    }
+    .tab-container{
+        margin-top: 0;
     }
 }

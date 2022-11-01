@@ -33,6 +33,9 @@ const inputE1  = document.querySelector(".input");
 
 const headerE1 = document.querySelector(".header");
 const h1E1 = document.querySelectorAll("h1");
+const h2E1 = document.querySelectorAll("h2");
+const h3E1 = document.querySelectorAll("h3");
+const tabBtnLiveE1 = document.querySelector(".tab-btn-live");
 
 
 inputE1.checked = JSON.parse(localStorage.getItem("mode"));
@@ -46,6 +49,13 @@ function updateMode(){
         h1E1.forEach(h1 =>{
             h1.style.color = "white";
         })
+        h2E1.forEach(h2 =>{
+            h2.style.color = "white";
+        })
+        h3E1.forEach(h3 =>{
+            h3.style.color = "white";
+        })
+        
  
         updateLocalStorage();
         console.log("checked")
@@ -56,6 +66,13 @@ function updateMode(){
         h1E1.forEach(h1 =>{
             h1.style.color = "black";
         })
+        h2E1.forEach(h2 =>{
+            h2.style.color = "balck";
+        })
+        h3E1.forEach(h3 =>{
+            h3.style.color = "black";
+        })
+        
        
         updateLocalStorage();
         console.log("unchecked")
@@ -287,6 +304,7 @@ function generateColor()
         const newColorCode= randomColor();
         color.style.background = "#" + newColorCode;
         color.innerText = "#" + newColorCode;
+        color.style.color = "white"
     });
 }
 
@@ -491,3 +509,44 @@ instruments.forEach((instrument)=>{
     })
    
 })
+
+//------------- tabs    ------------------------
+
+const tabContainerE1 = document.querySelector(".tab-container");
+const tabBntE1 = document.querySelectorAll(".tab-btn");
+const tabContentE1 = document.querySelectorAll(".content");
+
+tabContainerE1.addEventListener("click", (event)=>{
+    
+    const dataSetId = event.target.dataset.id;
+    console.log(dataSetId)
+    if(dataSetId)
+    {
+        console.log("inside")
+        tabBntE1.forEach((btn)=>{
+            btn.classList.remove("tab-btn-live");
+        })
+
+        event.target.classList.add("tab-btn-live");
+        if(JSON.parse(localStorage.getItem("mode")) == "true")
+        {
+            tabBtnLiveE1.style.background = "black";
+        }
+        else if(JSON.parse(localStorage.getItem("mode")) == "false")
+        {
+            tabBtnLiveE1.style.background = "white";
+        }
+        tabContentE1.forEach((content)=>{
+            content.classList.remove("content-live");
+        })
+        const contentLiveE1 = document.getElementById(dataSetId);
+        contentLiveE1.classList.add("content-live");
+
+    }
+    else{
+        console.log("outside")
+    }
+
+
+})
+console.log(JSON.parse(localStorage.getItem("mode")) === "true")
