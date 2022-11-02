@@ -12,6 +12,10 @@ body{
     font-family: sans-serif;
 }
 
+i{
+    color: limegreen;
+}
+
 .container{
     display: flex;
     flex-direction: column;
@@ -19,6 +23,10 @@ body{
     justify-content: center; 
     
     
+}
+
+.text-effect-h1{
+    margin: 0;
 }
 
 h1{
@@ -35,7 +43,7 @@ h2{
     font-family: cursive;
     margin: 10px 0;
     font-size: xl-large;
-    color: black;
+   color: darkgray;
     text-transform: capitalize;
 }
 a{
@@ -44,8 +52,9 @@ a{
 ul{
     list-style: none;
 }
+
 .image-container img{
-    height: 80vh;
+    height: 65vh;
     min-width: 100%;
     object-fit: cover;
 }
@@ -124,7 +133,7 @@ p{
     box-sizing: border-box;
 }
 .header.active{
-    height: 70vh;
+    height: 80vh;
     justify-content: center;
     
 }
@@ -148,7 +157,9 @@ p{
 .menu-item a:hover{
     color: limegreen;
 }
-
+.menu-icon i{
+    color: darkgray;
+}
 .menu-icon{
     margin-top: 5px;
     color: darkgray;
@@ -226,7 +237,7 @@ p{
     }
 
     .clock div{
-        margin: 5px;
+        margin: 1px;
     }
    
     .clock span{
@@ -270,18 +281,17 @@ p{
     .main-btn{
         
         position: absolute;
-     
         top: 65%;
         left: 50%;
         transform: translate(-50%, -50%);
-        
         padding: 20px 35px;
         border-radius: 30px;
         background: #ffff;
         color: balck;
-        border: none;
+        border:groove;
         font-size: 15px;
         overflow: hidden;
+        cursor: pointer;
         
     }.main-btn span{
         position: relative;
@@ -664,7 +674,7 @@ strong
 
     }
     .clock .ampm{
-        top: 60px;  /* 80 */
+        top: 55px;  /* 80 */
         width: 35px;
         font-size: 10px;
     }

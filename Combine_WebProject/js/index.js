@@ -35,7 +35,7 @@ const headerE1 = document.querySelector(".header");
 const h1E1 = document.querySelectorAll("h1");
 const h2E1 = document.querySelectorAll("h2");
 const h3E1 = document.querySelectorAll("h3");
-const tabBtnLiveE1 = document.querySelector(".tab-btn-live");
+
 
 
 inputE1.checked = JSON.parse(localStorage.getItem("mode"));
@@ -51,6 +51,7 @@ function updateMode(){
         })
         h2E1.forEach(h2 =>{
             h2.style.color = "white";
+            
         })
         h3E1.forEach(h3 =>{
             h3.style.color = "white";
@@ -67,7 +68,7 @@ function updateMode(){
             h1.style.color = "black";
         })
         h2E1.forEach(h2 =>{
-            h2.style.color = "balck";
+            h2.style.color = "black";
         })
         h3E1.forEach(h3 =>{
             h3.style.color = "black";
@@ -163,7 +164,7 @@ textEffect()
  {
     characterIndex++;
 
-    textEffectE1.innerHTML = "<h1>I am a "+ careers[careersIndex].slice(0, characterIndex)    +"</h1>";
+    textEffectE1.innerHTML = "<h1 class='text-effect-h1'>I am a "+ careers[careersIndex].slice(0, characterIndex)    +"</h1>";
 
     if(characterIndex === careers[careersIndex].length)
     {
@@ -423,9 +424,9 @@ lifes.forEach((life)=>{
     
 
     //add header in card
-    const h2E1 = document.createElement("h2");
-    cardE1.appendChild(h2E1);
-    h2E1.innerText = life;
+    const h2E2 = document.createElement("h2");
+    cardE1.appendChild(h2E2);
+    h2E2.innerText = life;
 
     //add paragraph in card
     const pE1 = document.createElement("p");
@@ -528,14 +529,7 @@ tabContainerE1.addEventListener("click", (event)=>{
         })
 
         event.target.classList.add("tab-btn-live");
-        if(JSON.parse(localStorage.getItem("mode")) == "true")
-        {
-            tabBtnLiveE1.style.background = "black";
-        }
-        else if(JSON.parse(localStorage.getItem("mode")) == "false")
-        {
-            tabBtnLiveE1.style.background = "white";
-        }
+       
         tabContentE1.forEach((content)=>{
             content.classList.remove("content-live");
         })
@@ -549,4 +543,4 @@ tabContainerE1.addEventListener("click", (event)=>{
 
 
 })
-console.log(JSON.parse(localStorage.getItem("mode")) === "true")
+console.log(JSON.parse(localStorage.getItem("mode")) == "true")
